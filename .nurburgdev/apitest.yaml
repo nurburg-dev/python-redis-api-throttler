@@ -1,0 +1,50 @@
+test_name: "API Throttler Tests"
+
+stages:
+  - name: "Health Check Tests"
+    tests:
+      - name: "Throttler health check"
+        request:
+          url: "http://throttler:8000/health"
+          method: GET
+        response:
+          status_code: 200
+          json:
+            status: "healthy"
+            service: "throttler"
+
+      - name: "Service A health check"
+        request:
+          url: "http://service-a:8000/health"
+          method: GET
+        response:
+          status_code: 200
+          json:
+            status: "healthy"
+            service: "service-a"
+
+      - name: "Service B health check"
+        request:
+          url: "http://service-b:8000/health"
+          method: GET
+        response:
+          status_code: 200
+          json:
+            status: "healthy"
+            service: "service-b"
+
+  - name: "Basic Routing Tests"
+    tests:
+      - name: "Test /a route routing"
+        request:
+          url: "http://throttler:8000/a/test"
+          method: GET
+        response:
+          status_code: 200
+
+      - name: "Test /b route routing"
+        request:
+          url: "http://throttler:8000/b/test"
+          method: GET
+        response:
+          status_code: 200

@@ -1,0 +1,28 @@
+name: throttler
+port: 8000
+runtime: python
+directory: throttler
+instances: 1
+env:
+  REDIS_HOST: devredis
+  REDIS_PORT: 6379
+  REDIS_PASSWORD: password
+  SERVICE_A_URL: http://service-a:8000
+  SERVICE_B_URL: http://service-b:8000
+  PORT: 8000
+---
+name: service-a
+port: 8000
+runtime: python
+directory: service-a
+instances: 1
+env:
+  PORT: 8000
+---
+name: service-b
+port: 8000
+runtime: python
+directory: service-b
+instances: 1
+env:
+  PORT: 8000

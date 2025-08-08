@@ -1,0 +1,5 @@
+name: devredis
+cpuCores: 1
+memoryGB: 1
+followers: 2
+password: password

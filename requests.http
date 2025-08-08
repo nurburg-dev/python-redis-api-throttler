@@ -1,0 +1,22 @@
+# Health check for throttler
+GET http://localhost:8000/health
+
+###
+
+# Test route /a (should go to service-a)
+GET http://localhost:8000/a/test
+
+###
+
+# Test route /b (should go to service-b)
+GET http://localhost:8000/b/test
+
+###
+
+# Direct service-a health check
+GET http://localhost:8001/health
+
+###
+
+# Direct service-b health check
+GET http://localhost:8002/health

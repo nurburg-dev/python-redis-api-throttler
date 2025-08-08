@@ -1,0 +1,15 @@
+{
+  "name": "Python Redis API Throttler",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "pip3 install tavern",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.black-formatter"
+      ]
+    }
+  }
+}
