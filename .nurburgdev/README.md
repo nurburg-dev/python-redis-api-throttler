@@ -11,6 +11,7 @@ This project implements an HTTP request throttler using Python, FastAPI, and Red
 ## Architecture
 
 The throttler acts as a reverse proxy that:
+
 - Receives HTTP requests on different routes (`/a/*` and `/b/*`)
 - Uses Redis to track request counts per client/endpoint
 - Implements rate limiting to prevent abuse
@@ -20,17 +21,20 @@ The throttler acts as a reverse proxy that:
 ## Services
 
 ### Throttler Service (Port 8000)
+
 - **Purpose**: Main API gateway with throttling functionality
-- **Routes**: 
+- **Routes**:
   - `/a/*` → forwards to Service A
   - `/b/*` → forwards to Service B
   - `/health` → health check endpoint
 
-### Service A (Port 8001)
+### Service A (Port 8000)
+
 - **Purpose**: Backend service for `/a` prefixed requests
 - **Features**: Simple FastAPI service that returns fixed responses
 
-### Service B (Port 8002)  
+### Service B (Port 8000)
+
 - **Purpose**: Backend service for `/b` prefixed requests
 - **Features**: Simple FastAPI service that returns fixed responses
 
@@ -45,7 +49,7 @@ The throttler acts as a reverse proxy that:
 
 1. All services are containerized and will run automatically in the development environment
 2. The throttler service runs on port 8000 and acts as the main entry point
-3. Backend services run on ports 8001 and 8002
+3. Backend services run on ports 8000
 4. Redis is used for request tracking and rate limiting
 
 ## API Usage

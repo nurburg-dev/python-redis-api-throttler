@@ -5,8 +5,8 @@ import os
 
 app = FastAPI(title="API Throttler", version="1.0.0")
 
-SERVICE_A_URL = os.getenv("SERVICE_A_URL", "http://localhost:8001")
-SERVICE_B_URL = os.getenv("SERVICE_B_URL", "http://localhost:8002")
+SERVICE_A_URL = os.getenv("SERVICE_A_URL", "http://service-a:8000")
+SERVICE_B_URL = os.getenv("SERVICE_B_URL", "http://service-b:8000")
 
 @app.get("/health")
 async def health_check() -> Dict[str, str]:

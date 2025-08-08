@@ -14,9 +14,9 @@ GET http://localhost:8000/b/test
 ###
 
 # Direct service-a health check
-GET http://localhost:8001/health
+GET http://service-a:8000/health
 
 ###
 
 # Direct service-b health check
-GET http://localhost:8002/health
+GET http://service-b:8000/health
