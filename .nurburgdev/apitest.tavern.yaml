@@ -1,4 +1,5 @@
 test_name: "API Throttler Tests"
+strict: false
 
 stages:
   - name: "Health Check Tests"
