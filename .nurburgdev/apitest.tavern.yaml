@@ -6,7 +6,7 @@ stages:
     tests:
       - name: "Throttler health check"
         request:
-          url: "http://throttler:8000/health"
+          url: "{tavern.env_vars.HOST}/health"
           method: GET
         response:
           status_code: 200
@@ -38,14 +38,14 @@ stages:
     tests:
       - name: "Test /a route routing"
         request:
-          url: "http://throttler:8000/a/test"
+          url: "{tavern.env_vars.HOST}/a/test"
           method: GET
         response:
           status_code: 200
 
       - name: "Test /b route routing"
         request:
-          url: "http://throttler:8000/b/test"
+          url: "{tavern.env_vars.HOST}/b/test"
           method: GET
         response:
           status_code: 200
