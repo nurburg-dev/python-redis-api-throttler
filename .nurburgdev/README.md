@@ -1,4 +1,12 @@
-# Python Redis API Throttler
+---
+title: Python Redis API Throttler
+video: https://www.youtube.com/watch?v=7ySVWcFHz98
+tags:
+  - redis
+  - python
+  - rest-api
+summary: This project implements an HTTP request throttler using Python, FastAPI, and Redis with three services including a throttler service and two backend services.
+---
 
 ## Project Overview
 
